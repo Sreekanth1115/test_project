@@ -1,0 +1,49 @@
+cd /opt
+
+download the java
+
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+install the packages 
+
+yum install jdk-8u131-linux-x64.rpm -y
+
+
+java -version
+
+Install Maven
+------------------
+Step1) Login as a root user and change the directory to /opt/
+
+cd /opt/
+
+Step2) Download the Maven 
+
+wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip
+
+unzip apache-maven-3.8.6-bin.zip
+
+Step3) Set the class path/Environmental Variable
+
+For Specific User
+----------------------
+vi ~/.bash_profile
+
+export M2_HOME=/opt/apache-maven-3.8.6
+
+export PATH=$PATH:$M2_HOME/bin
+
+source ~/.bash_profile
+
+For All Users
+---------------------- 
+vi /etc/profile
+
+export M2_HOME=/opt/apache-maven-3.8.6
+export PATH=$PATH:$M2_HOME/bin
+
+source /etc/profile
+
+Step4) Check the Maven version
+
+mvn -version

@@ -1,0 +1,15 @@
+provider "aws"{
+        region ="us_east-2"
+
+        acceskey ="******"
+    
+        secretkey = "*******"
+
+   
+   }
+    
+    resource "aws_ instance "us-east2"{
+
+      ami id     = "ami- *******"
+
+      instance-type= "t2.micro"
